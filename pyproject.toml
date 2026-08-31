@@ -1,0 +1,28 @@
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11>=2.12"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "aofve"
+version = "0.1.0"
+description = "Dividend-aware American option pricing and arbitrage-free SVI calibration"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Sheehan007"}]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Programming Language :: C++",
+  "Programming Language :: C++ :: 20",
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business :: Financial",
+]
+
+[project.optional-dependencies]
+test = ["numpy>=1.24", "pytest>=7"]
+
+[tool.scikit-build]
+cmake.args = ["-DAOFVE_BUILD_PYTHON=ON", "-DAOFVE_BUILD_EXAMPLES=OFF", "-DBUILD_TESTING=OFF"]
+wheel.packages = ["python/aofve"]
+build-dir = "build/{wheel_tag}"

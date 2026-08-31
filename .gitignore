@@ -1,0 +1,12 @@
+/build*/
+/dist/
+/.venv/
+/.idea/
+/.vscode/
+__pycache__/
+*.egg-info/
+*.py[cod]
+*.so
+*.dylib
+*.dll
+.DS_Store
